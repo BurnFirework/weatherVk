@@ -16,6 +16,12 @@ class ProfileViewController: UICollectionViewController {
             self.collectionView!.reloadData()
         }
     }
+    
+    var text: String? {
+        didSet {
+            self.collectionView!.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +63,9 @@ class ProfileViewController: UICollectionViewController {
                                                             for: indexPath) as? ProfileViewCell else {
             preconditionFailure("Error")
         }
+        cell.nameFriend.text = text
         cell.profileImage.image = image
+        cell.profileImage.layer.cornerRadius = cell.profileImage.layer.bounds.height / 2 + 30
     
         return cell
     }

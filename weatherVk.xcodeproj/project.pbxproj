@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE43F4E6287201C00029C7F2 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43F4E5287201C00029C7F2 /* LikeButton.swift */; };
 		AE8323B6281EE0080061F448 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323B5281EE0080061F448 /* AppDelegate.swift */; };
 		AE8323B8281EE0080061F448 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323B7281EE0080061F448 /* SceneDelegate.swift */; };
 		AE8323BD281EE0080061F448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8323BB281EE0080061F448 /* Main.storyboard */; };
@@ -24,9 +25,11 @@
 		AE8323E0282FAA370061F448 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323DF282FAA370061F448 /* Group.swift */; };
 		AE8323E2282FB0060061F448 /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323E1282FB0060061F448 /* MyGroupsController.swift */; };
 		AE8323E4282FB01F0061F448 /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323E3282FB01F0061F448 /* MyGroupsCell.swift */; };
+		AEDE425C28707730002BF4E4 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE425B28707730002BF4E4 /* ProfileImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE43F4E5287201C00029C7F2 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		AE8323B2281EE0080061F448 /* weatherVk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherVk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8323B5281EE0080061F448 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE8323B7281EE0080061F448 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		AE8323DF282FAA370061F448 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AE8323E1282FB0060061F448 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
 		AE8323E3282FB01F0061F448 /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
+		AEDE425B28707730002BF4E4 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,9 @@
 				AE8323DB282FA9810061F448 /* AllGroupsController.swift */,
 				AE8323DD282FA99B0061F448 /* AllGroupsCell.swift */,
 				AE8323D7282F98110061F448 /* ProfileViewController.swift */,
+				AEDE425B28707730002BF4E4 /* ProfileImageView.swift */,
 				AE8323D9282F98890061F448 /* ProfileViewCell.swift */,
+				AE43F4E5287201C00029C7F2 /* LikeButton.swift */,
 				AE8323D3282EA2DE0061F448 /* FriendCell.swift */,
 				AE8323D1282E9F7D0061F448 /* ListOfFriendsController.swift */,
 				AE8323BE281EE0090061F448 /* Assets.xcassets */,
@@ -191,6 +197,8 @@
 				AE8323B8281EE0080061F448 /* SceneDelegate.swift in Sources */,
 				AE8323DC282FA9810061F448 /* AllGroupsController.swift in Sources */,
 				AE8323D8282F98110061F448 /* ProfileViewController.swift in Sources */,
+				AE43F4E6287201C00029C7F2 /* LikeButton.swift in Sources */,
+				AEDE425C28707730002BF4E4 /* ProfileImageView.swift in Sources */,
 				AE8323D6282EA64F0061F448 /* User.swift in Sources */,
 				AE8323E4282FB01F0061F448 /* MyGroupsCell.swift in Sources */,
 			);

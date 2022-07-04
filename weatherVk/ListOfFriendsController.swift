@@ -62,6 +62,7 @@ class ListOfFriendsController: UITableViewController {
            let indexPath = tableView.indexPathForSelectedRow {
             let friendsImage = friends[indexPath.row].avatar
             destinationVc.image = friendsImage
+            destinationVc.text = friends[indexPath.row].nameFriend
         }
     }
 

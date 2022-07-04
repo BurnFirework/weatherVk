@@ -13,4 +13,9 @@ class FriendCell: UITableViewCell {
     
     @IBOutlet weak var friendNameLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        friendsAvatarView.layer.cornerRadius = friendsAvatarView.bounds.width / 2
+    }
 }
