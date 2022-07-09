@@ -13,16 +13,19 @@ class ListOfFriendsController: UITableViewController {
         User(avatarFriend: UIImage.init(named: "marinett"), nameFriend: "Маринетт Дюпэн-Чэн"),
         User(avatarFriend: UIImage.init(named: "adrian"), nameFriend: "Адриан Агрест"),
         User(avatarFriend: UIImage.init(named: "ladyBug"), nameFriend: "Леди Баг"),
-        User(avatarFriend: UIImage.init(named: "superCat"), nameFriend: "Супер-Кот"),
+        User(avatarFriend: UIImage.init(named: "superCat"), nameFriend: "Супер Кот"),
         User(avatarFriend: UIImage.init(named: "Alya"), nameFriend: "Алья Сезер"),
         User(avatarFriend: UIImage.init(named: "nino"), nameFriend: "Нино Лейф"),
         User(avatarFriend: UIImage.init(named: "chloi"), nameFriend: "Хлоя Буржуа"),
         User(avatarFriend: UIImage.init(named: "luka"), nameFriend: "Лука Куффен")
     ]
 
+    var sortedFriends = [Character: [User]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.sortedFriends = sort(friends: friends)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,16 +33,37 @@ class ListOfFriendsController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    private func sort(friends: [User]) -> [Character: [User]] {
+        var friendsDict = [Character: [User]]()
+        
+        friends.forEach() { friend in
+            
+            guard let firstChar = friend.nameFriend.split(separator: " ")[1].first else {return}
+            
+            if var thisCharFriends = friendsDict[firstChar] {
+                thisCharFriends.append(friend)
+                friendsDict[firstChar] = thisCharFriends
+            } else {
+                friendsDict[firstChar] = [friend]
+            }
+        }
+        return friendsDict
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return sortedFriends.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return friends.count
+        let keySorted = sortedFriends.keys.sorted() //массив отсортированных ключей
+        
+        let friends = sortedFriends[keySorted[section]]?.count ?? 0 //количество ячеек в определенной секции
+        
+        return friends
     }
 
     
@@ -49,8 +73,14 @@ class ListOfFriendsController: UITableViewController {
             preconditionFailure("Error")
         }
 
-        cell.friendNameLabel.text = friends[indexPath.row].nameFriend
-        cell.friendsAvatarView.image = friends[indexPath.row].avatar
+        let firstChar = sortedFriends.keys.sorted()[indexPath.section] //получили букву для конкретной секции
+        
+        let friends = sortedFriends[firstChar]! //получили массив друзей для определенной секции
+        
+        let friend: User = friends[indexPath.row] //получили пользователя по номеру строки
+        
+        cell.friendNameLabel.text = friend.nameFriend
+        cell.friendsAvatarView.image = friend.avatar
         // Configure the cell...
 
         return cell
@@ -64,6 +94,10 @@ class ListOfFriendsController: UITableViewController {
             destinationVc.image = friendsImage
             destinationVc.text = friends[indexPath.row].nameFriend
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        String(sortedFriends.keys.sorted()[section])
     }
 
     /*
