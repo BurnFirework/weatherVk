@@ -13,10 +13,12 @@ class DataNews {
     let imageNews: UIImage?
     let textNews: String
     var comments: [String]
+    var numberOfViews: Int
     
-    init(imageNews: UIImage? = nil, textNews: String, comments: [String]) {
+    init(imageNews: UIImage? = nil, textNews: String, comments: [String], numberOfViews: Int) {
         self.imageNews = imageNews
         self.textNews = textNews
         self.comments = comments
+        self.numberOfViews = numberOfViews
     }
 }

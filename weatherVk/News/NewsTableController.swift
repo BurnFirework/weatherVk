@@ -11,20 +11,25 @@ class NewsTableController: UITableViewController {
 
     let news = [DataNews(imageNews: UIImage.init(named: "disneyPicture"),
                          textNews: "А вы знали, что существует и советская экранизация Бэмби?",
-                         comments: ["Я люблю смотреть мультфильм \"бэмби\"", "Фильм так и называется \"Детство Бэмби\"?"]),
+                         comments: ["Я люблю смотреть мультфильм \"бэмби\"", "Фильм так и называется \"Детство Бэмби\"?"],
+                         numberOfViews: 0),
                 DataNews(imageNews: UIImage.init(named: "matanTask"),
                          textNews: "Выкладываю одну весьма симпатичную и почти нетрудную задачку про кубический многочлен от одной буквы над полем. Прошу любить и жаловать !",
-                        comments: ["А что значит вполне проводим?", "Хорошая задача"]),
+                        comments: ["А что значит вполне проводим?", "Хорошая задача"],
+                         numberOfViews: 0),
                 DataNews(imageNews: UIImage.init(named: "starDisc"),
                          textNews: "Стар против Сил Зла ещё выпускали на DVD дисках!",
                          comments: ["Я уверен, что это пиратка, понятно по лицевой обложке", "Прикольно. Я даже и не знала об этом.",
-                                   "Ля какая обложка. А Тоффи тут прям кровожадный тиран. Робот убийца"]),
+                                   "Ля какая обложка. А Тоффи тут прям кровожадный тиран. Робот убийца"],
+                         numberOfViews: 0),
                 DataNews(imageNews: UIImage.init(named: "pasha"),
                          textNews: "Павел Воля идет в IT вместе с GeekBrains 23 июня в 19:00 МСК",
-                         comments: ["а будут курсы от бузовой о том, как стать аэрокосмическим инженером?"]),
+                         comments: ["а будут курсы от бузовой о том, как стать аэрокосмическим инженером?"],
+                         numberOfViews: 0),
                 DataNews(imageNews: UIImage.init(named: "guse-1"),
                          textNews: "Этот гусь живет свою лучшую жизнь.",
-                         comments: ["Это утка"])]
+                         comments: ["Это утка"],
+                         numberOfViews: 0)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +52,7 @@ class NewsTableController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        news[indexPath.row].numberOfViews += 1
         performSegue(withIdentifier: "showPost", sender: self)
     }
 
@@ -59,6 +65,7 @@ class NewsTableController: UITableViewController {
 
         cell.newsLabel.text = news[indexPath.row].textNews
         cell.newsImageView.image = news[indexPath.row].imageNews
+        cell.counterViews.text = String(news[indexPath.row].numberOfViews)
 
         return cell
     }
@@ -69,6 +76,7 @@ class NewsTableController: UITableViewController {
            let indexPath = tableView.indexPathForSelectedRow {            
             destinationVc.dataNews = news[indexPath.row]
         }
+        tableView.reloadData()
     }
 
     /*

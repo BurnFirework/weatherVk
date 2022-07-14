@@ -463,14 +463,14 @@
                                 <color key="separatorColor" red="0.01176470588" green="0.0" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="comment" id="h7f-3b-H5k" customClass="CommentCell" customModule="weatherVk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="30.666666030883789"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="31.333333969116211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h7f-3b-H5k" id="2xE-CH-9EZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="30.666666030883789"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="31.333333969116211"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rww-bq-vCW">
-                                                    <rect key="frame" x="5" y="5" width="418" height="20.666666666666668"/>
+                                                    <rect key="frame" x="5" y="5" width="418" height="21.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

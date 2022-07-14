@@ -18,6 +18,8 @@ class NewsCellXib: UITableViewCell {
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var shareImage: UIImageView!
     
+    @IBOutlet weak var counterViews: UILabel!
+    
     override func awakeFromNib() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
