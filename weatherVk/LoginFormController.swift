@@ -7,8 +7,10 @@
 
 import UIKit
 
+
 class LoginFormController: UIViewController {
 
+    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -23,6 +25,7 @@ class LoginFormController: UIViewController {
                 return}
         
         performSegue(withIdentifier: "Login", sender: nil)
+        
     }
     
     override func viewDidLoad() {
@@ -33,6 +36,10 @@ class LoginFormController: UIViewController {
         #selector(hideKeyboard))
         // Присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        button.layer.cornerRadius = button.layer.bounds.height / 2
     }
     
     // Когда клавиатура появляется

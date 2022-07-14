@@ -7,10 +7,26 @@
 
 import UIKit
 
-class MyGroupsController: UITableViewController {
+class MyGroupsController: UITableViewController, UISearchBarDelegate {
     
     var groups = [Group]()
-
+    var searchString: String? = nil
+    var filterGroups: [Group] {
+        get {
+            if let str = searchString {
+                if str == "" {
+                    return groups
+                }
+                
+                return groups.filter { group in
+                    return group.nameGroup.lowercased().starts(with: str.lowercased())
+                }
+            } else {
+                return groups
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +46,7 @@ class MyGroupsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groups.count
+        return filterGroups.count
     }
     
 
@@ -40,8 +56,8 @@ class MyGroupsController: UITableViewController {
             preconditionFailure("Error")
         }
 
-        cell.myNameGroup.text = groups[indexPath.row].nameGroup
-        cell.myImageGroup.image = groups[indexPath.row].photo
+        cell.myNameGroup.text = filterGroups[indexPath.row].nameGroup
+        cell.myImageGroup.image = filterGroups[indexPath.row].photo
         // Configure the cell...
 
         return cell
@@ -83,6 +99,12 @@ class MyGroupsController: UITableViewController {
             // И удаляем строку из таблицы
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+
+    func searchBar(_:UISearchBar, textDidChange: String) {
+        print("Text changed!")
+        searchString = textDidChange
+        tableView.reloadData()
     }
 
     /*
