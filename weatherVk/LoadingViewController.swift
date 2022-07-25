@@ -13,9 +13,9 @@ class LoadingViewController: UIViewController {
     @IBOutlet weak var circleTwo: UIImageView!
     @IBOutlet weak var circleThree: UIImageView!
     
-    private let dot1Animation = CABasicAnimation(keyPath: "transform.scale")
-    private let dot2Animation = CABasicAnimation(keyPath: "transform.scale")
-    private let dot3Animation = CABasicAnimation(keyPath: "transform.scale")
+    private let dot1Animation = CABasicAnimation(keyPath: "opacity")
+    private let dot2Animation = CABasicAnimation(keyPath: "opacity")
+    private let dot3Animation = CABasicAnimation(keyPath: "opacity")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class LoadingViewController: UIViewController {
             $0.duration = 0.5
             $0.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
             $0.isRemovedOnCompletion = false
-            $0.toValue = 0.7
+            $0.toValue = 0.5
             $0.repeatCount = Float.infinity
         }
     }
@@ -47,9 +47,9 @@ class LoadingViewController: UIViewController {
         dot2Animation.beginTime = CACurrentMediaTime() + 0.25
         dot3Animation.beginTime = CACurrentMediaTime() + 0.5
         
-        circleOne.layer.add(dot1Animation, forKey: "ScaleDot1Animation")
-        circleTwo.layer.add(dot2Animation, forKey: "ScaleDot2Animation")
-        circleThree.layer.add(dot3Animation, forKey: "ScaleDot3Animation")
+        circleOne.layer.add(dot1Animation, forKey: "Dot1Animation")
+        circleTwo.layer.add(dot2Animation, forKey: "Dot2Animation")
+        circleThree.layer.add(dot3Animation, forKey: "Dot3Animation")
     }
     
     public func stopAnimation() {
