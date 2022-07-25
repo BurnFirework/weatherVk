@@ -107,12 +107,65 @@
                         <outlet property="loginInput" destination="taJ-Yv-yV5" id="MPK-kc-96e"/>
                         <outlet property="passwordInput" destination="dnj-6t-num" id="Ixg-ML-h9h"/>
                         <outlet property="scrollView" destination="l8U-ZP-v1u" id="CKX-BL-jsg"/>
-                        <segue destination="7AV-rU-kp4" kind="presentation" identifier="Login" modalPresentationStyle="fullScreen" id="RoO-ih-aar"/>
+                        <segue destination="51K-Di-5Nc" kind="presentation" identifier="Login" modalPresentationStyle="fullScreen" id="nZh-bF-vQT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.62616822429902" y="79.697624190064801"/>
+            <point key="canvasLocation" x="88" y="78"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="12h-pF-3yp">
+            <objects>
+                <viewController id="51K-Di-5Nc" customClass="LoadingViewController" customModule="weatherVk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1q5-Ef-TUR">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-SQ-L9c">
+                                <rect key="frame" x="194" y="449" width="40" height="38.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ejT-QE-bji"/>
+                                    <constraint firstAttribute="height" constant="40" id="iDy-rh-Vmu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0jA-i1-PJi" userLabel="Circle Three">
+                                <rect key="frame" x="244" y="449" width="40" height="38.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Ksd-8r-3Vo"/>
+                                    <constraint firstAttribute="height" constant="40" id="ty1-U2-DB7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-rW-6vZ">
+                                <rect key="frame" x="144" y="449" width="40" height="38.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="25K-9d-7nN"/>
+                                    <constraint firstAttribute="height" constant="40" id="9lO-k9-eip"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bf8-ED-43f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0jA-i1-PJi" firstAttribute="centerY" secondItem="hs3-SQ-L9c" secondAttribute="centerY" id="4RX-hl-yNu"/>
+                            <constraint firstItem="q3S-rW-6vZ" firstAttribute="centerY" secondItem="hs3-SQ-L9c" secondAttribute="centerY" id="9pg-lb-Cah"/>
+                            <constraint firstItem="hs3-SQ-L9c" firstAttribute="leading" secondItem="q3S-rW-6vZ" secondAttribute="trailing" constant="10" id="AaJ-DE-dng"/>
+                            <constraint firstItem="0jA-i1-PJi" firstAttribute="leading" secondItem="hs3-SQ-L9c" secondAttribute="trailing" constant="10" id="JLZ-k9-lTd"/>
+                            <constraint firstItem="hs3-SQ-L9c" firstAttribute="centerX" secondItem="bf8-ED-43f" secondAttribute="centerX" id="OCR-WL-Axn"/>
+                            <constraint firstItem="hs3-SQ-L9c" firstAttribute="centerY" secondItem="bf8-ED-43f" secondAttribute="centerY" id="h7X-SR-Dko"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iz6-dn-AbD"/>
+                    <connections>
+                        <outlet property="circleOne" destination="q3S-rW-6vZ" id="7xM-W7-aLm"/>
+                        <outlet property="circleThree" destination="0jA-i1-PJi" id="LyP-O7-pa4"/>
+                        <outlet property="circleTwo" destination="hs3-SQ-L9c" id="ufh-Qs-8pm"/>
+                        <segue destination="7AV-rU-kp4" kind="presentation" identifier="MainScreen" modalPresentationStyle="fullScreen" id="dOF-Nl-dLC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uDs-eZ-wcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.71028037383167" y="77.753779697624196"/>
         </scene>
         <!--Friends-->
         <scene sceneID="Kw5-qJ-MyH">
@@ -156,7 +209,6 @@
                                 <connections>
                                     <outlet property="friendNameLabel" destination="K7E-ne-9gY" id="2uN-YF-SgX"/>
                                     <outlet property="friendsAvatarView" destination="LOe-7l-lLe" id="0Xm-pZ-Jy8"/>
-                                    <segue destination="oy8-9u-4lu" kind="show" identifier="showProfile" id="20u-yr-UM5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -166,6 +218,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="ZCx-f7-gZI"/>
+                    <connections>
+                        <segue destination="oy8-9u-4lu" kind="show" identifier="showProfile" id="XBY-hm-fEj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9L-Iv-T3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -463,14 +518,14 @@
                                 <color key="separatorColor" red="0.01176470588" green="0.0" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="comment" id="h7f-3b-H5k" customClass="CommentCell" customModule="weatherVk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="31.333333969116211"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="30.666666030883789"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h7f-3b-H5k" id="2xE-CH-9EZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="31.333333969116211"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="30.666666030883789"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rww-bq-vCW">
-                                                    <rect key="frame" x="5" y="5" width="418" height="21.333333333333332"/>
+                                                    <rect key="frame" x="5" y="5" width="418" height="20.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -644,6 +699,7 @@
     </scenes>
     <resources>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

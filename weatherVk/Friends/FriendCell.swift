@@ -18,4 +18,6 @@ class FriendCell: UITableViewCell {
         
         friendsAvatarView.layer.cornerRadius = friendsAvatarView.bounds.width / 2
     }
+    
+    
 }

@@ -86,13 +86,35 @@ class ListOfFriendsController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? FriendCell else {
+            preconditionFailure("Error")
+        }
+        
+        UIView.animate(withDuration: 0.6,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+            cell.friendsAvatarView.frame.size.height *= 1.1
+            cell.friendsAvatarView.frame.size.width *= 1.1
+        }) { _ in
+            self.performSegue(withIdentifier: "showProfile", sender: self)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showProfile",
            let destinationVc = segue.destination as? ProfileViewController,
            let indexPath = tableView.indexPathForSelectedRow {
-            let friendsImage = friends[indexPath.row].avatar
-            destinationVc.image = friendsImage
-            destinationVc.text = friends[indexPath.row].nameFriend
+            
+            let firstChar = sortedFriends.keys.sorted()[indexPath.section]
+            let sectionFriends = sortedFriends[firstChar]!
+            let friend: User = sectionFriends[indexPath.row]
+            
+            destinationVc.image = friend.avatar
+            destinationVc.text = friend.nameFriend
         }
     }
     

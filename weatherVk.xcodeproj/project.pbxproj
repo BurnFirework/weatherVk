@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0B47A1288C8890008FEBB3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B47A0288C8890008FEBB3 /* LoadingViewController.swift */; };
 		AE43F4E6287201C00029C7F2 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43F4E5287201C00029C7F2 /* LikeButton.swift */; };
 		AE8073E5287C4AA700289AD0 /* NewsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8073E4287C4AA700289AD0 /* NewsTableController.swift */; };
 		AE8073E9287C520200289AD0 /* NewsCellXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8073E7287C520200289AD0 /* NewsCellXib.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE0B47A0288C8890008FEBB3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		AE43F4E5287201C00029C7F2 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		AE8073E4287C4AA700289AD0 /* NewsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableController.swift; sourceTree = "<group>"; };
 		AE8073E7287C520200289AD0 /* NewsCellXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsCellXib.swift; path = weatherVk/News/NewsCellXib.swift; sourceTree = SOURCE_ROOT; };
@@ -146,6 +148,7 @@
 				AE8323B5281EE0080061F448 /* AppDelegate.swift */,
 				AE8323B7281EE0080061F448 /* SceneDelegate.swift */,
 				AE8323BB281EE0080061F448 /* Main.storyboard */,
+				AE0B47A0288C8890008FEBB3 /* LoadingViewController.swift */,
 				AE8323E528304B810061F448 /* Model */,
 				AE8073E1287C49F300289AD0 /* Groups */,
 				AE8073E2287C4A2E00289AD0 /* Profile */,
@@ -253,6 +256,7 @@
 				AE8323D0282142760061F448 /* ExtenshionAlert.swift in Sources */,
 				AE8323D2282E9F7D0061F448 /* ListOfFriendsController.swift in Sources */,
 				AE8073F0287DE28E00289AD0 /* PostViewController.swift in Sources */,
+				AE0B47A1288C8890008FEBB3 /* LoadingViewController.swift in Sources */,
 				AE8323B6281EE0080061F448 /* AppDelegate.swift in Sources */,
 				AE8073E9287C520200289AD0 /* NewsCellXib.swift in Sources */,
 				AE8323B8281EE0080061F448 /* SceneDelegate.swift in Sources */,

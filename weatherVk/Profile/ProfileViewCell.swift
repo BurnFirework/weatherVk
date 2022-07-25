@@ -25,11 +25,25 @@ class ProfileViewCell: UICollectionViewCell {
         likeButton.isLike.toggle() //меняем true на false и наоборот
         
         if likeButton.isLike {
-            likeButton.likePicture.image = UIImage(systemName: "suit.heart.fill")
-            counter.text = "1"
+            UIView.animate(withDuration: 0.2, animations: { () -> Void in
+                self.counter.transform = .init(scaleX: 1.25, y: 1.25)
+            }) { (finished: Bool) -> Void in
+                self.counter.text = "1"
+                self.likeButton.likePicture.image = UIImage(systemName: "suit.heart.fill")
+                UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                    self.counter.transform = .identity
+                })
+            }
         } else {
-            likeButton.likePicture.image = UIImage(systemName: "suit.heart")
-            counter.text = "0"
+            UIView.animate(withDuration: 0.2, animations: { () -> Void in
+                self.counter.transform = .init(scaleX: 1.25, y: 1.25)
+            }) { (finished: Bool) -> Void in
+                self.counter.text = "0"
+                self.likeButton.likePicture.image = UIImage(systemName: "suit.heart")
+                UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                    self.counter.transform = .identity
+                })
+            }
         }
     }
     
