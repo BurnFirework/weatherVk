@@ -34,6 +34,7 @@
 		AE8323E0282FAA370061F448 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323DF282FAA370061F448 /* Group.swift */; };
 		AE8323E2282FB0060061F448 /* MyGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323E1282FB0060061F448 /* MyGroupsController.swift */; };
 		AE8323E4282FB01F0061F448 /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8323E3282FB01F0061F448 /* MyGroupsCell.swift */; };
+		AEACDE5328927F5E00F71DDC /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEACDE5228927F5E00F71DDC /* PhotosViewController.swift */; };
 		AEDE425C28707730002BF4E4 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE425B28707730002BF4E4 /* ProfileImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		AE8323DF282FAA370061F448 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AE8323E1282FB0060061F448 /* MyGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsController.swift; sourceTree = "<group>"; };
 		AE8323E3282FB01F0061F448 /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
+		AEACDE5228927F5E00F71DDC /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AEDE425B28707730002BF4E4 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				AE8323B5281EE0080061F448 /* AppDelegate.swift */,
 				AE8323B7281EE0080061F448 /* SceneDelegate.swift */,
 				AE8323BB281EE0080061F448 /* Main.storyboard */,
+				AEACDE5228927F5E00F71DDC /* PhotosViewController.swift */,
 				AE0B47A0288C8890008FEBB3 /* LoadingViewController.swift */,
 				AE8323E528304B810061F448 /* Model */,
 				AE8073E1287C49F300289AD0 /* Groups */,
@@ -254,6 +257,7 @@
 				AE8073E5287C4AA700289AD0 /* NewsTableController.swift in Sources */,
 				AE8323D4282EA2DE0061F448 /* FriendCell.swift in Sources */,
 				AE8323D0282142760061F448 /* ExtenshionAlert.swift in Sources */,
+				AEACDE5328927F5E00F71DDC /* PhotosViewController.swift in Sources */,
 				AE8323D2282E9F7D0061F448 /* ListOfFriendsController.swift in Sources */,
 				AE8073F0287DE28E00289AD0 /* PostViewController.swift in Sources */,
 				AE0B47A1288C8890008FEBB3 /* LoadingViewController.swift in Sources */,

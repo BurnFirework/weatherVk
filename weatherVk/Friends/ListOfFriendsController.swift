@@ -10,14 +10,22 @@ import UIKit
 class ListOfFriendsController: UITableViewController {
     
     let friends = [
-        User(avatarFriend: UIImage.init(named: "marinett"), nameFriend: "Маринетт Дюпэн-Чэн"),
-        User(avatarFriend: UIImage.init(named: "adrian"), nameFriend: "Адриан Агрест"),
-        User(avatarFriend: UIImage.init(named: "ladyBug"), nameFriend: "Леди Баг"),
-        User(avatarFriend: UIImage.init(named: "superCat"), nameFriend: "Супер Кот"),
-        User(avatarFriend: UIImage.init(named: "Alya"), nameFriend: "Алья Сезер"),
-        User(avatarFriend: UIImage.init(named: "nino"), nameFriend: "Нино Лейф"),
-        User(avatarFriend: UIImage.init(named: "chloi"), nameFriend: "Хлоя Буржуа"),
-        User(avatarFriend: UIImage.init(named: "luka"), nameFriend: "Лука Куффен")
+        User(avatarFriend: UIImage.init(named: "marinett")!, nameFriend: "Маринетт Дюпэн-Чэн",
+             photos: [UIImage.init(named: "marinett")!, UIImage.init(named: "marinett2")!, UIImage.init(named: "marinett3")!, UIImage.init(named: "marinettAndBug")!]),
+        User(avatarFriend: UIImage.init(named: "adrian")!, nameFriend: "Адриан Агрест",
+             photos: [UIImage.init(named: "adrian")!, UIImage.init(named: "adrian2")!, UIImage.init(named: "adrian3")!, UIImage.init(named: "adrian4")!]),
+        User(avatarFriend: UIImage.init(named: "ladyBug")!, nameFriend: "Леди Баг",
+             photos: [UIImage.init(named: "ladyBug")!, UIImage.init(named: "ladyBug2")!, UIImage.init(named: "ladyBug3")!]),
+        User(avatarFriend: UIImage.init(named: "superCat")!, nameFriend: "Супер Кот",
+             photos: [UIImage.init(named: "superCat")!, UIImage.init(named: "ladyBug3")!, UIImage.init(named: "superCat2")!, UIImage.init(named: "superCat3")!, UIImage.init(named: "superCat4")!]),
+        User(avatarFriend: UIImage.init(named: "Alya")!, nameFriend: "Алья Сезер",
+             photos: [UIImage.init(named: "Alya")!, UIImage.init(named: "Alya4")!]),
+        User(avatarFriend: UIImage.init(named: "nino")!, nameFriend: "Нино Лейф",
+             photos: [UIImage.init(named: "nino")!]),
+        User(avatarFriend: UIImage.init(named: "chloi")!, nameFriend: "Хлоя Буржуа",
+             photos: [UIImage.init(named: "chloi")!, UIImage.init(named: "chloi4")!]),
+        User(avatarFriend: UIImage.init(named: "luka")!, nameFriend: "Лука Куффен",
+             photos: [UIImage.init(named: "luka")!, UIImage.init(named: "luka2")!, UIImage.init(named: "luka3")!, UIImage.init(named: "luka4")!])
     ]
 
     var sortedFriends = [Character: [User]]()
@@ -113,8 +121,7 @@ class ListOfFriendsController: UITableViewController {
             let sectionFriends = sortedFriends[firstChar]!
             let friend: User = sectionFriends[indexPath.row]
             
-            destinationVc.image = friend.avatar
-            destinationVc.text = friend.nameFriend
+            destinationVc.user = friend
         }
     }
     

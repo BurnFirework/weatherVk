@@ -337,11 +337,49 @@
                             <outlet property="delegate" destination="oy8-9u-4lu" id="gGl-0S-GT8"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="BHD-9h-CAR"/>
+                    <navigationItem key="navigationItem" id="BHD-9h-CAR">
+                        <barButtonItem key="rightBarButtonItem" title="Photos" id="7C3-d7-TKx">
+                            <connections>
+                                <segue destination="3vV-0B-4Ml" kind="show" identifier="photoScreen" id="XKb-Zs-rkW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFK-5l-2KA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4847.663551401869" y="-168.46652267818575"/>
+        </scene>
+        <!--Photos View Controller-->
+        <scene sceneID="1nz-JP-eDn">
+            <objects>
+                <viewController id="3vV-0B-4Ml" customClass="PhotosViewController" customModule="weatherVk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VUf-wK-z1Z">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mtf-vY-zHa">
+                                <rect key="frame" x="0.0" y="251.66666666666663" width="428" height="428"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mtf-vY-zHa" secondAttribute="height" multiplier="1:1" id="1fs-U2-mGb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A2Z-uy-TQ8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mtf-vY-zHa" firstAttribute="leading" secondItem="A2Z-uy-TQ8" secondAttribute="leading" id="H1T-zL-LF8"/>
+                            <constraint firstItem="A2Z-uy-TQ8" firstAttribute="trailing" secondItem="Mtf-vY-zHa" secondAttribute="trailing" id="LKi-7C-J1L"/>
+                            <constraint firstItem="Mtf-vY-zHa" firstAttribute="centerY" secondItem="A2Z-uy-TQ8" secondAttribute="centerY" id="Ogg-64-g8m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IiY-Ef-e6C"/>
+                    <connections>
+                        <outlet property="imagePhoto" destination="Mtf-vY-zHa" id="FeZ-sm-azc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d90-pe-aYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5636" y="-165"/>
         </scene>
         <!--Friends-->
         <scene sceneID="SIg-w4-RTZ">
@@ -518,14 +556,14 @@
                                 <color key="separatorColor" red="0.01176470588" green="0.0" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="comment" id="h7f-3b-H5k" customClass="CommentCell" customModule="weatherVk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="30.666666030883789"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="31.333333969116211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h7f-3b-H5k" id="2xE-CH-9EZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="30.666666030883789"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="31.333333969116211"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rww-bq-vCW">
-                                                    <rect key="frame" x="5" y="5" width="418" height="20.666666666666668"/>
+                                                    <rect key="frame" x="5" y="5" width="418" height="21.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
